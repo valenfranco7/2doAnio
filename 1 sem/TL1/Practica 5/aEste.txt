@@ -1,0 +1,6 @@
+1er y 2da linea jjj con fgetc y fputc.
+esta tmb.
+3ra y 4ta linea jjj con fgets y fputs.
+esta tambienn.
+5ta y 6ta linea jjj fread y fwrite.
+esta same.
