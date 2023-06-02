@@ -1,0 +1,15 @@
+a. La principal diferencia entre un grafo y un árbol radica en su estructura y las reglas que los rigen.
+
+Un grafo es una estructura de datos abstracta que consiste en un conjunto de vértices (o nodos) y un conjunto de aristas (o líneas) que conectan estos vértices. Los grafos pueden ser dirigidos (donde las aristas tienen una dirección) o no dirigidos (las aristas no tienen dirección). Los grafos pueden tener ciclos (una secuencia cerrada de vértices y aristas donde el primer y último vértice son el mismo).
+
+Un árbol es un tipo especial de grafo. Los árboles no contienen ciclos y hay un único camino entre cualquier par de nodos. Un árbol es una estructura jerárquica con un nodo raíz desde el cual se pueden alcanzar todos los demás nodos.
+
+b.
+
+i. Vértices: países. Aristas: es limítrofe. - Este caso se representa mejor con un grafo no dirigido, ya que la relación de ser limítrofe es bidireccional (si el país A es limítrofe con el país B, entonces el país B también es limítrofe con el país A).
+
+ii. Vértices: países. Aristas: principales mercados de exportación. - Este caso se representa mejor con un grafo dirigido o digrafo, ya que la relación de exportación no es necesariamente bidireccional (el país A puede exportar al país B, pero eso no significa que el país B también exporte al país A).
+
+iii. Vértices: dispositivos en una red de computadoras. Aristas: conectividad. - Este caso podría representarse tanto con un grafo dirigido como con uno no dirigido, dependiendo de si la conectividad es bidireccional o no. En muchas redes, la comunicación es bidireccional, lo que favorecería el uso de un grafo no dirigido.
+
+iv. Vértices: variables de un programa. Aristas: relación “usa”. - Este caso se representa mejor con un grafo dirigido, ya que la relación de "uso" es unidireccional (la variable A puede usar la variable B, pero eso no implica que B use a A).

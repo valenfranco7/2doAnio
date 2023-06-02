@@ -1,0 +1,11 @@
+a. En un grafo no dirigido de n vértices:
+
+i. El mínimo número de aristas que puede tener para que el grafo sea conexo es n - 1. Un grafo conexo es aquel en el que hay al menos un camino entre cualquier par de vértices. En el caso mínimo, esto se puede lograr con un grafo en forma de "cadena" o "línea" donde cada vértice está conectado solo a los vértices directamente adyacentes a él.
+
+ii. El máximo número de aristas que puede tener para que el grafo sea acíclico es n - 1. Esto es porque un grafo acíclico con más de n - 1 aristas formaría inevitablemente un ciclo.
+
+iii. Si un grafo es a la vez conexo y acíclico, se llama árbol y tiene exactamente n - 1 aristas.
+
+iv. El mínimo número de aristas que puede tener para que el grafo sea completo es (n*(n-1))/2. Un grafo completo es aquel en el que cada vértice está conectado a todos los demás vértices.
+
+b. En un grafo dirigido (también conocido como dígrafo) que no tiene aristas que vayan de un nodo a sí mismo, el mayor número de aristas que puede tener es n*(n-1). Esto es porque cada uno de los n vértices puede tener una arista dirigida a todos los demás n - 1 vértices.

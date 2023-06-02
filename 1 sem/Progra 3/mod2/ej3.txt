@@ -1,0 +1,15 @@
+a. Matriz de Adyacencias vs Lista de Adyacencias:
+
+Matriz de Adyacencias: Este método es especialmente útil para representar grafos densos, donde muchos o todos los pares de nodos están conectados. Esto se debe a que la matriz de adyacencias siempre es de tamaño n^2, independientemente del número de aristas. Además, verificar si existe una arista entre dos vértices es inmediato, lo que es una ventaja para ciertos algoritmos.
+
+Lista de Adyacencias: Este método es más eficiente para representar grafos dispersos o grafos con pocas aristas, ya que su tamaño es proporcional al número de aristas, no al cuadrado del número de nodos. Adicionalmente, las operaciones que involucran iterar sobre todas las aristas adyacentes a un vértice dado son más eficientes con una lista de adyacencia.
+
+b. Grafos Densos vs Grafos Dispersos:
+
+Grafos Densos: En los grafos densos, donde el número de aristas m es cercano al número máximo posible de aristas (es decir, m está cerca de n^2 para grafos no dirigidos y 2n^2 para dirigidos), los algoritmos que son eficientes en términos de m son a menudo más apropiados. (matriz de ady)
+
+Grafos Dispersos: En los grafos dispersos, donde el número de aristas m es mucho menor que n^2, los algoritmos que son eficientes en términos de n son a menudo más apropiados. (lista de ady)
+
+c. Representación de Grafo No Dirigido con Matriz de Adyacencias:
+
+En una matriz de adyacencia para un grafo no dirigido, la matriz es simétrica alrededor de su diagonal principal. Esto se debe a que si hay una arista entre los nodos i y j, entonces hay una ruta en ambos sentidos, desde i a j y desde j a i. Entonces, si representamos la presencia de una arista con un 1 (y la ausencia con un 0), tanto la celda (i, j) como la celda (j, i) de la matriz tendrán un 1.
