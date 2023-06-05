@@ -8,34 +8,32 @@ import prog3.listagenerica.*;
 public class Delta {
 	
 	public int maxIslasDistintas(Grafo<String> grafo) {
-		int recorridoMax=-1;
-		if((grafo!=null)&&(!grafo.esVacio())) {
-			boolean[] visitados= new boolean[grafo.listaDeVertices().tamanio()];
-			grafo.listaDeVertices().comenzar();
-			Vertice<String> muellePrincipal= grafo.listaDeVertices().proximo();
-			recorridoMax=maxIslasDistintas(muellePrincipal,muellePrincipal,visitados,grafo);//no es +1para no contar el muelle
-		}
-		
-		return recorridoMax;
+	    int recorridoMax = -1;
+	    if((grafo!=null)&&(!grafo.esVacio())) {
+	        boolean[] visitados= new boolean[grafo.listaDeVertices().tamanio()];
+	        grafo.listaDeVertices().comenzar();
+	        Vertice<String> muellePrincipal= grafo.listaDeVertices().proximo();
+	        recorridoMax = maxIslasDistintas(muellePrincipal,visitados,grafo,0);
+	    }
+	    return recorridoMax;
 	}
-	
-	private int maxIslasDistintas(Vertice<String>vAct,Vertice<String> muelle,boolean[] visitados,Grafo<String> g) {
-		int max=0;
-		visitados[vAct.posicion()]=true;
-		ListaGenerica<Arista<String>> adyacentes= g.listaDeAdyacentes(vAct);
-		adyacentes.comenzar();
-		while(!adyacentes.fin()) {
-			Vertice<String> vSig= adyacentes.proximo().verticeDestino();
-			if(!visitados[vSig.posicion()]) {
-				int islas=1+maxIslasDistintas(vSig,muelle,visitados,g);
-				if (islas>max){
-					max=islas;
-				};//sumamos una isla al avanzar
-			}
-		}
-		visitados[vAct.posicion()]=false;
-		return max;
+
+	private int maxIslasDistintas(Vertice<String> vAct, boolean[] visitados,Grafo<String> g, int islasAct) {
+	    visitados[vAct.posicion()] = true;
+	    int max = islasAct;
+	    ListaGenerica<Arista<String>> adyacentes = g.listaDeAdyacentes(vAct);
+	    adyacentes.comenzar();
+	    while (!adyacentes.fin()) {
+	        Vertice<String> vSig = adyacentes.proximo().verticeDestino();
+	        if (!visitados[vSig.posicion()]) {
+	            int islas = maxIslasDistintas(vSig, visitados, g, islasAct + 1);
+	            max = Math.max(max, islas);
+	        }
+	    }
+	    visitados[vAct.posicion()] = false;
+	    return max;
 	}
+
 	
 	public RutaMinima<String> caminoMasCorto(Grafo<String> grafo,String islaO,String islaD) {
 		RutaMinima<String> resultado= new RutaMinima<>();
@@ -47,8 +45,8 @@ public class Delta {
 			vertices.comenzar();
 			while((!vertices.fin())&&(vInicial==null || vFinal==null)) {
 				Vertice<String> vAct=vertices.proximo();
-				if (vAct.dato().endsWith(islaO)) vInicial=vAct;
-				else if ((vAct.dato().endsWith(islaD))) vFinal=vAct;
+				if (vAct.dato().equals(islaO)) vInicial=vAct;
+				else if ((vAct.dato().equals(islaD))) vFinal=vAct;
 				
 			}
 			//si existen
