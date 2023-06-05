@@ -1,0 +1,14 @@
+practica facil, no voy a subir muchos ejs.
+
+cosas importantes, o para recordar
+
+compilar desde linea de comandos:
+una vez que accedes a la carpeta con cd.
+gcc main.c -o main
+(main.c es eln nombre del archivo, -o main crea un ejecutable con el nombre de main)
+
+main 2 3 5
+
+(main, es el nombre del archivo, lo demas, son los argumentos que mandas a main.) en este caso son 3, y argv empieza en 1 y va hasta 4.
+
+argc es la cantidad de argumentos pasados al main.
